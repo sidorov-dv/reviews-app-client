@@ -9,7 +9,9 @@ const SocialGoogle = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get(`${REACT_APP_URL}successGoogle`);
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_URL}successGoogle`
+        );
         if ("token" in data.user) {
           window.localStorage.setItem("token", data.user.token);
         }

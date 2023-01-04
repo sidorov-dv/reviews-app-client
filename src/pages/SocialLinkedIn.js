@@ -9,7 +9,9 @@ const SocialLinkedIn = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get(`${REACT_APP_URL}successLinkedIn`);
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_URL}successLinkedIn`
+        );
         if ("token" in data.user) {
           window.localStorage.setItem("token", data.user.token);
         }

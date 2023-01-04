@@ -1,0 +1,141 @@
+$backBorderColor: #24be46;
+
+.root {
+    border: 2px solid $backBorderColor;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+
+    &:hover {
+        box-shadow: 5px 5px 10px rgba($backBorderColor, 0.5);
+        .editButtons {
+            opacity: 1;
+        }
+    }
+}
+
+.imageContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    .image {
+        border: 1px solid $backBorderColor;
+        border-radius: 5px;
+        flex-grow: 1;
+        width: 49%;
+        height: 350px;
+        object-fit: cover;
+        &Full {
+            min-height: 400px;
+        }
+    }
+}
+
+@media all and (max-width: 900px) {
+    .imageContainer {
+        .image {
+            width: 100%;
+        }
+    }
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    max-width: 300px;
+    li {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 10px;
+        color: rgb(240, 7, 240);
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.markdown {
+    * {
+        margin: 10px 0;
+        overflow: hidden;
+        width: 95%;
+        font-size: 16px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.markdownAll {
+    * {
+        margin: 10px 0;
+        // word-break: break-all;
+    }
+}
+
+.reviewDetails {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    li {
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        svg {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.skeleton {
+    border: 1px solid rgb(77, 76, 76);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &Content {
+        padding: 16px;
+    }
+
+    &Info {
+        margin-left: 50px;
+    }
+}
+
+.skeletonUser {
+    display: flex;
+
+    &Details {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.skeletonTags {
+    display: flex;
+
+    span {
+        margin-right: 15px;
+    }
+}
+
+.editButtons {
+    position: absolute;
+    z-index: 10;
+    right: 15px;
+    top: 15px;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}

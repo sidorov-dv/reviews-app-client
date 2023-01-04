@@ -9,16 +9,17 @@ const SocialLinkedIn = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get(
-          `http://localhost:5000/successLinkedIn`
-        );
+        const { data } = await axios.get(`${REACT_APP_URL}successLinkedIn`);
         if ("token" in data.user) {
           window.localStorage.setItem("token", data.user.token);
         }
       } catch (e) {
         console.log(e);
       } finally {
-        setTimeout(() => window.location.assign("http://localhost:3000"), 3000);
+        setTimeout(
+          () => window.location.assign("https://reviews-app-blue.vercel.app/"),
+          3000
+        );
       }
     };
     fetchUser();

@@ -74,7 +74,7 @@ const Header = ({ changeLang }) => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("userId");
     dispatch(logout());
-    await Axios.get("http://localhost:5000/auth/logout");
+    await Axios.get(`${REACT_APP_URL}auth/logout`);
     navigate("/");
   };
 

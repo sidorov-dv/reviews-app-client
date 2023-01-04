@@ -59,11 +59,11 @@ const SignUp = () => {
   };
 
   const submitOnGoogle = () => {
-    window.open("http://localhost:5000/social/auth/google", "_self");
+    window.open(`${REACT_APP_URL}social/auth/google`, "_self");
   };
 
   const submitOnLinkedIn = () => {
-    window.open("http://localhost:5000/social/auth/linkedIn", "_self");
+    window.open(`${REACT_APP_URL}social/auth/linkedIn`, "_self");
   };
 
   if (isAuth) {

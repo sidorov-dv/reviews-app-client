@@ -64,7 +64,7 @@ const UserInfo = ({ avatarUrl = "", nickname, date, likes }) => {
       <Box component="div" sx={{ position: "absolute", top: 45, left: 40 }}>
         <FavoriteIcon color="error" />
         <Typography component="span" sx={{ fontWeight: 500, fontSize: 14 }}>
-          {likes}
+          {likes ? likes : ""}
         </Typography>
       </Box>
     </Paper>

@@ -49,7 +49,7 @@ const FullReview = () => {
 
   return (
     <Grid sx={{ mt: 15 }} container spacing={2} justifyContent="center">
-      <Grid xs={10} item>
+      <Grid xs={12} sm={10} item>
         <Review
           _id={data._id}
           reviewName={data.reviewName}

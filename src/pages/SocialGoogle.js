@@ -20,7 +20,7 @@ const SocialGoogle = () => {
       } finally {
         setTimeout(
           () => window.location.assign("https://reviews-app-blue.vercel.app/"),
-          3000
+          2000
         );
       }
     };

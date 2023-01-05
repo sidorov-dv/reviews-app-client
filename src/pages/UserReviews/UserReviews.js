@@ -56,7 +56,7 @@ const UserReviews = () => {
 
   return (
     <Grid container spacing={2} justifyContent="center" sx={{ mt: 8 }}>
-      <Grid xs={10} item>
+      <Grid xs={12} sm={10} item>
         <Tabs
           sx={{ my: 1 }}
           value={showReviews}
@@ -68,14 +68,14 @@ const UserReviews = () => {
           <Tab value="rating" label={t("tab_n3")} />
         </Tabs>
       </Grid>
-      <Grid xs={10} item>
+      <Grid xs={12} sm={10} item>
         <TagsBlock
           items={tags.items}
           isLoading={isTagsLoading}
           findReviewsByTags={findReviewsByTagsHandler}
         />
       </Grid>
-      <Grid xs={10} item>
+      <Grid xs={12} sm={10} item>
         {(isUserReviewsLoading ? [...Array(3)] : reviews).map(function (
           obj,
           index

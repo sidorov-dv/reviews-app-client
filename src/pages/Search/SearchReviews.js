@@ -31,7 +31,7 @@ const SearchReviews = () => {
 
   return (
     <Grid container spacing={4} sx={{ mt: 12 }} justifyContent="center">
-      <Grid xs={10} item>
+      <Grid xs={12} sm={10} item>
         {(isReviewsLoading ? [...Array(3)] : reviews.searchReviews).map(
           function (obj, index) {
             if (isReviewsLoading) {

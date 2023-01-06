@@ -7,24 +7,19 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Navigate } from "react-router-dom";
-import { fetchAllUsers, selectIsAuth } from "../../redux/slices/auth";
+import { Link } from "react-router-dom";
+import { fetchAllUsers } from "../../redux/slices/auth";
 import { useTranslation } from "react-i18next";
 
 const AdminControl = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const isAuth = useSelector(selectIsAuth);
   const userDataBase = useSelector((state) => state.auth.allUsers);
 
   useEffect(() => {
     dispatch(fetchAllUsers());
     // eslint-disable-next-line
   }, []);
-
-  if (!isAuth) {
-    return <Navigate to="/" />;
-  }
 
   return (
     <TableContainer component={Paper} sx={{ mt: 20, mx: "auto" }} elevation={6}>

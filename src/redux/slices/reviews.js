@@ -169,7 +169,7 @@ const reviewsSlice = createSlice({
       state.tags.status = "error";
     },
     [removeReview.pending]: (state, action) => {
-      state.reviews.items = state.reviews.items.filter(
+      state.reviews.userReviews = state.reviews.userReviews.filter(
         (obj) => obj._id !== action.meta.arg
       );
     },

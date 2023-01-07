@@ -23,7 +23,6 @@ import ReactMarkdown from "react-markdown";
 import axios from "../../axios";
 import {
   removeReview,
-  fetchUserReviews,
   fetchReviewsByTags,
   fetchUserReviewsByTags,
 } from "../../redux/slices/reviews";
@@ -95,7 +94,6 @@ const Review = ({
 
   const RemoveReviewHandler = () => {
     dispatch(removeReview(_id));
-    setTimeout(() => dispatch(fetchUserReviews(userId)), 350);
   };
 
   if (isLoading) {

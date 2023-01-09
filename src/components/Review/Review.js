@@ -188,7 +188,7 @@ const Review = ({
         />
         <ul className={styles.tags}>
           {tags.map((name) => (
-            <li key={name} onClick={findReviewsByTagHandler.bind(null, name)}>
+            <li key={name} onClick={() => findReviewsByTagHandler(name)}>
               #{name}
             </li>
           ))}
